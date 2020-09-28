@@ -1,16 +1,22 @@
 package com.miolaprojects.MiolaProjects;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
+import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 import com.miolaprojects.MiolaProjects.Repos.EncadrantRepository;
 import com.miolaprojects.MiolaProjects.Repos.EtudiantRepository;
+import com.miolaprojects.MiolaProjects.Repos.GroupeRepository;
 import com.miolaprojects.MiolaProjects.Repos.ProjetRepository;
+import com.miolaprojects.MiolaProjects.jwtConfig.JwtRequestFilter;
 import com.miolaprojects.MiolaProjects.models.Encadrant;
 import com.miolaprojects.MiolaProjects.models.Etudiant;
+import com.miolaprojects.MiolaProjects.models.Groupe;
 import com.miolaprojects.MiolaProjects.models.Projet;
 
 @SpringBootApplication
@@ -24,6 +30,9 @@ public class MiolaProjectsApplication {
 	
 	@Autowired
 	private EtudiantRepository etudiantRepo;
+	
+	@Autowired
+	private GroupeRepository groupeRepo;
 	
 	public static void main(String[] args) {
 		SpringApplication.run(MiolaProjectsApplication.class, args);
@@ -54,6 +63,9 @@ public class MiolaProjectsApplication {
 			Etudiant et3 = new Etudiant("SALIH","Samah","143784903","Miola","","","");
 			Etudiant et4 = new Etudiant("ABDULRAHMAN","Ali Ibrahim","G56389X83","Miola","","","");
 			
+			Groupe g1 = new Groupe("IotGuys");
+			Groupe g2 = new Groupe("Eagles");
+			
 			projetRepo.save(p1);
 			projetRepo.save(p2);
 			projetRepo.save(p3);
@@ -67,8 +79,8 @@ public class MiolaProjectsApplication {
 			etudiantRepo.save(et3);
 			etudiantRepo.save(et4);
 			
-			
-			
+			groupeRepo.save(g1);
+			groupeRepo.save(g2);
 		
 		};
 	}

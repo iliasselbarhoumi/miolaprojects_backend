@@ -27,4 +27,5 @@ public class Etudiant {
 	@NonNull private String groupKey;
 	@NonNull private String EncadrantId;
 	@NonNull private String projectId;
+	
 }
