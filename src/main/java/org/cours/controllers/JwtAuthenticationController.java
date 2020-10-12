@@ -1,6 +1,8 @@
 package org.cours.controllers;
 
 
+import java.util.List;
+
 import org.cours.Dao.DaoUser;
 import org.cours.Dao.UserDao;
 import org.cours.jwtConfig.JwtTokenUtil;
@@ -40,10 +42,11 @@ public class JwtAuthenticationController {
 	@Autowired
 	private UserDao userDao;
 	
+	
 	@GetMapping(value = "/users")
-	public Iterable<?> getAllUsers(){
+	public List<String> getAllUsers(){
 		
-		return userDao.findAll();
+		return userDao.getAllUsernames();
 	}
 	
 	@PreAuthorize("hasRole('ADMIN')")

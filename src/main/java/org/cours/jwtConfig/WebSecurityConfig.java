@@ -21,9 +21,9 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 @EnableGlobalMethodSecurity(prePostEnabled = true)
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter{
 	
-	
-	@Autowired
-	private JwtAuthenticationEntryPoint jwtAuthenticationEntryPoint;	
+//	
+//	@Autowired
+//	private JwtAuthenticationEntryPoint jwtAuthenticationEntryPoint;	
 	
 	@Autowired
 	private UserDetailsService jwtUserDetailsService;	
@@ -73,7 +73,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter{
 		
 		httpSecurity.csrf().disable()
 				// dont authenticate this particular request
-				.authorizeRequests().antMatchers("/authenticate", "/register","/etudiants", "/users", "/h2-console").permitAll().
+				.authorizeRequests().antMatchers("/authenticate", "/register", "/users", "/h2-console").permitAll().
 				// all other requests need to be authenticated
 				anyRequest().authenticated().and().
 				// make sure we use stateless session; session won't be used to
