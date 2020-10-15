@@ -31,9 +31,7 @@ public class Projet {
 	@NonNull
 	private String Duree;
 	@NonNull
-	private String[] Technologies;
-	@NonNull
-	private String[] Remarques;
+	private String Technologies;
 	@NonNull
 	private double Note;
 	

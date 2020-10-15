@@ -56,9 +56,7 @@ public class JwtAuthenticationController {
 		authenticate(authenticationRequest.getUsername(),authenticationRequest.getPassword());	
 		
 		final UserDetails userDetails = userDetailsService .loadUserByUsername(authenticationRequest.getUsername());
-		
-		//System.out.println("rrr "+userDetails+ " username "+authenticationRequest.getUsername());
-		
+				
 		final String token = jwtTokenUtil.generateToken(userDetails);
 		
 		return ResponseEntity.ok(new JwtResponse(token, getRoleFromUsername(authenticationRequest.getUsername())));
@@ -88,7 +86,5 @@ public class JwtAuthenticationController {
 		catch (BadCredentialsException e) 
 		{ throw new Exception("INVALID_CREDENTIALS", e); }
 	}
-	
-	
 	
 }

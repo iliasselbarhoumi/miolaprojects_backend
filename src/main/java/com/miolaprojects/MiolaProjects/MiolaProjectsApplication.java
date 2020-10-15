@@ -1,19 +1,16 @@
 package com.miolaprojects.MiolaProjects;
 
-import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
-import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 import com.miolaprojects.MiolaProjects.Repos.EncadrantRepository;
 import com.miolaprojects.MiolaProjects.Repos.EtudiantRepository;
 import com.miolaprojects.MiolaProjects.Repos.GroupeRepository;
 import com.miolaprojects.MiolaProjects.Repos.ProjetRepository;
-import com.miolaprojects.MiolaProjects.jwtConfig.JwtRequestFilter;
 import com.miolaprojects.MiolaProjects.models.Encadrant;
 import com.miolaprojects.MiolaProjects.models.Etudiant;
 import com.miolaprojects.MiolaProjects.models.Groupe;
@@ -46,13 +43,9 @@ public class MiolaProjectsApplication {
 			String[] TechP2 = {"Photoshop", "Illustrator"};
 			String[] TechP3 = {"Android Studio", "Firebase"};
 			
-			String[] RemarquesP1 = {};
-			String[] RemarquesP2 = {};
-			String[] RemarquesP3 = {};
-			
-			Projet p1 = new Projet("SmartZoo - Vision Board","projet consiste a élaborer une vison d'un projet.","SCRUM","15 jours",TechP1,RemarquesP1,0);
-			Projet p2 = new Projet("SmartZoo - Vision Box","projet consiste a élaborer un box d'un projet.","SCRUM","20 jours",TechP2,RemarquesP2,0);
-			Projet p3 = new Projet("HealthCare","projet consiste a élaborer une application de gestion d'un cabinet médical","Android","2 mois",TechP3,RemarquesP3,0);
+			Projet p1 = new Projet("SmartZoo - Vision Board","projet consiste a élaborer une vison d'un projet.","SCRUM","15 jours","",0);
+			Projet p2 = new Projet("SmartZoo - Vision Box","projet consiste a élaborer un box d'un projet.","SCRUM","20 jours","Photoshop, Illustrator",0);
+			Projet p3 = new Projet("HealthCare","projet consiste a élaborer une application de gestion d'un cabinet médical","Android","2 mois","Android Studio, Firebase",0);
 			
 			Encadrant e1 = new Encadrant("Ahmed","Rochdi","Encadrant","GI");
 			Encadrant e2 = new Encadrant("Safae","Hilali","Encadrant","BigData");
